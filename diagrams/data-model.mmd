@@ -1,0 +1,55 @@
+erDiagram
+    BRAND_ACCOUNT ||--o{ CONTENT_ITEM : owns
+    CONTENT_ITEM ||--o{ CONTENT_ASSET : has
+    CONTENT_ITEM ||--o{ PUBLISH_JOB : creates
+    PUBLISH_JOB ||--o{ PUBLISH_ATTEMPT_LOG : records
+
+    BRAND_ACCOUNT {
+        uuid id
+        uuid client_id
+        string platform
+        string account_name
+        string posting_mode
+        boolean require_human_approval
+        boolean allow_attended_rpa
+        boolean allow_auto_publish
+    }
+
+    CONTENT_ITEM {
+        uuid id
+        uuid client_id
+        string platform
+        string post_type
+        string title
+        string approval_status
+        string status
+        datetime scheduled_at
+    }
+
+    CONTENT_ASSET {
+        uuid id
+        uuid content_item_id
+        string asset_type
+        string file_url
+        string local_path
+        int sort_order
+        boolean is_cover
+    }
+
+    PUBLISH_JOB {
+        uuid id
+        uuid content_item_id
+        string platform
+        string adapter_type
+        string status
+        int attempt_count
+    }
+
+    PUBLISH_ATTEMPT_LOG {
+        uuid id
+        uuid publish_job_id
+        string step_name
+        string step_status
+        string screenshot_url
+    }
+

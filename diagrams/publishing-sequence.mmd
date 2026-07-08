@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant Sheet as Google Sheet
+    participant N8N as n8n
+    participant API as Local RPA API
+    participant Device as Browser/Android Device
+    participant Platform as Social Platform
+    participant Operator as Human Operator
+
+    N8N->>Sheet: Read first ready row
+    Sheet-->>N8N: Return content and media links
+    N8N->>N8N: Normalize fields and create lane items
+    alt Direct API platform
+        N8N->>Platform: Publish through approved API
+        Platform-->>N8N: Return status or error
+    else RPA platform
+        N8N->>API: Submit publish job
+        API->>Device: Start attended automation
+        Device->>Platform: Fill post fields and upload media
+        Platform-->>Device: Draft, warning, or confirmation state
+        Device-->>Operator: Stop when human action is required
+        API-->>N8N: Return structured job status
+    end
+    N8N->>Sheet: Update exact row with platform results
+

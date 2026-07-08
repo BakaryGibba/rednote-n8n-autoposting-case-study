@@ -1,0 +1,16 @@
+stateDiagram-v2
+    [*] --> Queued
+    Queued --> Running
+    Running --> LoginRequired
+    Running --> HumanInterventionRequired
+    Running --> HumanConfirmationRequired
+    Running --> DraftSaved
+    Running --> Published
+    Running --> FailedNeedsHuman
+    LoginRequired --> Running: Operator resolves login
+    HumanInterventionRequired --> Running: Operator resolves blocker
+    HumanConfirmationRequired --> Published: Final confirmation
+    DraftSaved --> [*]
+    Published --> [*]
+    FailedNeedsHuman --> [*]
+

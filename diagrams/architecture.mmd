@@ -1,0 +1,44 @@
+flowchart LR
+    subgraph Ops["Operations Layer"]
+        Sheet["Google Sheets Queue"]
+        Drive["Google Drive Media"]
+        Operator["Human Operator"]
+    end
+
+    subgraph N8N["n8n Orchestration"]
+        Trigger["Manual or Scheduled Trigger"]
+        Normalize["Normalize Content and Media"]
+        Router["Publishing Lane Router"]
+        Merge["Merge Results"]
+        Status["Update Exact Queue Row"]
+    end
+
+    subgraph Local["Local RPA Service"]
+        API["Node/Express API"]
+        Web["Playwright Web Runner"]
+        Mobile["Appium/WebdriverIO Runner"]
+    end
+
+    subgraph Platforms["Platforms"]
+        RedNote["RedNote/Xiaohongshu"]
+        TikTok["TikTok"]
+        Meta["Instagram/Facebook APIs"]
+        LinkedIn["LinkedIn API"]
+    end
+
+    Sheet --> Trigger
+    Drive --> Normalize
+    Trigger --> Normalize --> Router
+    Router --> API
+    Router --> Meta
+    Router --> LinkedIn
+    API --> Web --> RedNote
+    API --> Mobile --> RedNote
+    API --> Mobile --> TikTok
+    Web --> Operator
+    Mobile --> Operator
+    API --> Merge
+    Meta --> Merge
+    LinkedIn --> Merge
+    Merge --> Status --> Sheet
+

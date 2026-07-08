@@ -1,0 +1,18 @@
+flowchart TD
+    Trigger["Cron or Manual Trigger"] --> Read["Read first ready Queue row"]
+    Read --> Normalize["Normalize Drive URL, caption, hashtags, and media"]
+    Normalize --> Fanout["Create publishing lane items"]
+    Fanout --> Switch{"Platform route"}
+    Switch --> RedNote["RedNote RPA lane"]
+    Switch --> TikTok["TikTok RPA lane"]
+    Switch --> Instagram["Instagram API lane"]
+    Switch --> Facebook["Facebook API lane"]
+    Switch --> LinkedIn["LinkedIn API lane"]
+    RedNote --> Merge["Merge lane results"]
+    TikTok --> Merge
+    Instagram --> Merge
+    Facebook --> Merge
+    LinkedIn --> Merge
+    Merge --> Compute["Compute final status"]
+    Compute --> Update["Update exact Queue row"]
+

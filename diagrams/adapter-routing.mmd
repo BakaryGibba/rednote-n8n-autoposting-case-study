@@ -1,0 +1,20 @@
+flowchart TD
+    Job["Approved content item"] --> Account["Load platform and account settings"]
+    Account --> Mode{"Posting mode"}
+    Mode --> Manual["manual_pack"]
+    Mode --> WebRPA["attended_rpa"]
+    Mode --> MobileRPA["mobile_rpa"]
+    Mode --> DirectAPI["direct_api"]
+    Mode --> Partner["approved_tool"]
+    Manual --> Notify["Notify operator with copy and assets"]
+    WebRPA --> Browser["Fill browser creator page"]
+    MobileRPA --> Device["Run serialized Android session"]
+    DirectAPI --> Official["Publish through official API"]
+    Partner --> Tool["Send to approved partner tool"]
+    Browser --> Confirm["Human final confirmation"]
+    Device --> Confirm
+    Official --> Result["Return platform result"]
+    Tool --> Result
+    Notify --> Result
+    Confirm --> Result
+
