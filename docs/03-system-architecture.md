@@ -63,12 +63,3 @@ flowchart LR
 | Playwright | Attended browser automation for web publishing |
 | Appium/WebdriverIO | Android automation for RedNote and TikTok mobile apps |
 | Operator | Handles login, CAPTCHA, 2FA, warnings, and final publish review |
-
-## Screenshot Placeholder
-
-**File:** `screenshots/workflow-lane-routing.png`
-
-Capture the n8n router or switch that separates direct API platforms from RPA platforms.
-
-> [!NOTE]
-> A full n8n overview screenshot is available in the README and executive summary. This close-up routing screenshot remains optional.

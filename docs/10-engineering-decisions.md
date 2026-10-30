@@ -34,9 +34,8 @@ flowchart TD
     Partner --> Publish
 ```
 
-## Screenshot Placeholder
+## Screenshot
 
-**File:** `screenshots/workflow-lane-routing.png`
+![n8n multi-platform publishing workflow](../screenshots/n8n-overview.png)
 
-Capture the n8n routing branch that embodies the adapter decision.
-
+The n8n canvas shows the adapter decision in practice: direct API platforms and RPA platforms run in separate lanes.
