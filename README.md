@@ -9,7 +9,11 @@
 > [!NOTE]
 > This repository is a sanitized engineering case study. It explains the architecture, workflows, safety boundaries, and engineering decisions behind a RedNote/Xiaohongshu social publishing automation system without exposing secrets, account sessions, credentials, private workflow exports, or downloaded media.
 
-## Hero Overview
+| Context | Team | Status | My part |
+| --- | --- | --- | --- |
+| AI Engineering Internship, Apping Technology Sdn. Bhd. (2026) | Engineering team | Used by real users | [My contributions →](docs/12-my-contributions.md) |
+
+## Overview
 
 **RedNote Autoposting with n8n** is a safe, attended multi-platform publishing automation system. It uses n8n to orchestrate content queues, Google Sheets and Drive for lightweight operations, a local Node.js RPA service for publishing adapters, Playwright for attended web automation, and Appium/WebdriverIO for mobile automation.
 
@@ -161,6 +165,17 @@ Screenshots are captured with demo workflow data and selected to show the system
 - Added Android automation for mobile-only publishing flows using Appium/WebdriverIO.
 - Defined explicit safety boundaries for login, CAPTCHA, 2FA, account warnings, and final confirmation.
 
+## Limitations
+
+What this case study does not show, and what the system does not yet do:
+
+- Source code, account sessions and credentials are private; this repository documents design and operations only.
+- Publishing is attended by design: login, CAPTCHA, 2FA and final confirmation always need a person.
+- Browser and mobile selectors break when platform interfaces change and are recalibrated through runbooks.
+- Mobile jobs run one at a time because a single Android device handles one publishing session.
+- Job state is not yet stored in a database, and there is no automatic retry with backoff.
+- Credentials are kept locally rather than in a managed secret store.
+
 ## Lessons Learned
 
 > [!IMPORTANT]
@@ -170,4 +185,13 @@ Screenshots are captured with demo workflow data and selected to show the system
 - A queue-first workflow makes partial failures visible and recoverable.
 - Mobile automation should be serialized because one Android device can only handle one publishing session cleanly.
 - Human confirmation is a product safety feature, not an inconvenience.
-- Portfolio documentation should explain the safety model as clearly as the technical workflow.
+
+---
+
+<div align="center">
+
+**Part of [Bakary Gibba's AI engineering portfolio](https://github.com/BakaryGibba/bakary-gibba-ai-engineering-portfolio)**
+
+[Portfolio website](https://bakary-gibba.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/bakary-gibba-6409bb248/) · [Google Scholar](https://scholar.google.com/citations?user=bp0G4sgAAAAJ&hl=en)
+
+</div>
