@@ -2,6 +2,9 @@
 
 # 12 My Contributions
 
+> [!NOTE]
+> Built with the engineering team at Apping Technology Sdn. Bhd. during my AI Engineering internship (2026). This page describes my part of the work.
+
 ## Contribution Summary
 
 This project demonstrates end-to-end automation architecture: n8n workflow design, local RPA API design, mobile automation setup, publishing adapter strategy, safety boundaries, and operational documentation.
