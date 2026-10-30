@@ -35,10 +35,3 @@ flowchart TD
     Result -->|Yes| Done[Published]
     Result -->|No| Human
 ```
-
-## Screenshot Placeholder
-
-**File:** `screenshots/runbook.png`
-
-Capture the runbook or safety checklist used by operators.
-

@@ -21,10 +21,3 @@ This project demonstrates end-to-end automation architecture: n8n workflow desig
 ## Technical Narrative
 
 The core contribution is not just automation. It is the design of an accountable publishing system where every lane has an owner, every failure has a visible status, and every risky action can stop for a human.
-
-## Screenshot Placeholder
-
-**File:** `screenshots/status-sheet.png`
-
-Capture platform-level result columns showing how contribution-level workflow design becomes operational visibility.
-

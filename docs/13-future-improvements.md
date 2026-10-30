@@ -30,10 +30,3 @@ flowchart LR
     Vault[Credential Vault] --> N8N
     Vault --> Adapters
 ```
-
-## Screenshot Placeholder
-
-**File:** `screenshots/artifacts-folder.png`
-
-Capture the artifact output pattern once screenshots and run logs are sanitized.
-

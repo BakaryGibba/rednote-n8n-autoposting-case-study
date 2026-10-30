@@ -74,9 +74,8 @@ erDiagram
 | Publish job status | Tracks adapter execution outcome |
 | Attempt logs | Captures step-level traceability and screenshots |
 
-## Screenshot Placeholder
+## Screenshot
 
-**File:** `screenshots/status-sheet.png`
+![Google Sheet publishing queue with demo rows and status columns](../screenshots/google-sheet-queue.png)
 
-Capture the status sheet with demo results and no real platform account information.
-
+The queue sheet holds demo jobs and the per-platform status columns described above.

@@ -22,12 +22,3 @@
 4. Review human intervention states if RPA stops.
 5. Confirm final publishing when required.
 6. Check status fields for completed, partially completed, or failed outcomes.
-
-## Screenshot Placeholders
-
-| File | What To Capture |
-| --- | --- |
-| `rednote-mobile-draft.png` | RedNote draft or filled post screen with demo content |
-| `tiktok-mobile-publish.png` | TikTok mobile automation state with demo content |
-| `artifacts-folder.png` | Sanitized screenshot/artifact folder showing output structure |
-
